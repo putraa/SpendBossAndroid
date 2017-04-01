@@ -1,267 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.putraa.spendboss.MainActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo"
-        android:id="@+id/imageView"
+        app:srcCompat="@drawable/main_logo"
+        android:id="@+id/mainLogo"
         android:paddingTop="7dp"
-        android:maxWidth="200dp"
-        android:maxHeight="200dp"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:contentDescription="spendboss logo" />
 
-    <RelativeLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true">
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/undershadow"
+        android:id="@+id/underShadow" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/gridLayout">
+    <TextView
+        android:text="Overview"
+        android:textStyle="bold"
+        android:textSize="23sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelOverview"
+        android:textColor="#545454"
+        android:paddingLeft="22dp"
+        android:paddingTop="2dp"
+        tools:ignore="RtlSymmetry" />
 
-            <TextView
-                android:text="Overview"
-                android:textStyle="bold"
-                android:textSize="23sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelOverview"
-                android:textColor="#545454"
-                android:paddingLeft="13dp"
-                android:paddingTop="2dp"
-                tools:ignore="RtlSymmetry" />
+    <TextView
+        android:text="Since 07 February 2017 (example)"
+        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelSince"
+        android:textColor="#545454"
+        android:paddingLeft="22dp"
+        android:paddingBottom="2dp"
+        tools:ignore="RtlSymmetry" />
 
-            <TextView
-                android:text="Since 07 February 2017 (example)"
-                android:textSize="12sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelSince"
-                android:textColor="#545454"
-                android:paddingLeft="13dp"
-                android:paddingBottom="2dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                tools:ignore="RtlSymmetry" />
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonAccountDetails"
+        android:maxWidth="100dp"
+        android:maxHeight="33dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/button_account_details" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/buttonAccountDetails"
-                android:maxWidth="500dp"
-                android:maxHeight="300dp"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent"
-                android:layout_row="2"
-                android:layout_column="0"
-                app:layout_columnSpan="3"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/buttonAccountDetails"
-                android:layout_columnSpan="4" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:id="@+id/layoutBalance">
 
-            <!-- Option Labels -->
-            <TextView
-                android:text="Balance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelBalance"
-                android:textColor="#545454"
-                android:paddingLeft="13dp"
-                android:paddingTop="5dp"
-                android:layout_row="3"
-                android:layout_column="0"
-                tools:ignore="RtlSymmetry" />
-
-            <TextView
-                android:text="Earning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelEarning"
-                android:textColor="#545454"
-                android:paddingLeft="13dp"
-                android:paddingTop="5dp"
-                android:layout_row="4"
-                android:layout_column="0"
-                tools:ignore="RtlSymmetry" />
-
-            <TextView
-                android:text="Spending"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelSpending"
-                android:textColor="#545454"
-                android:paddingLeft="13dp"
-                android:paddingTop="5dp"
-                android:layout_row="5"
-                android:layout_column="0" />
-
-            <TextView
-                android:text="Days Last"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelDaysLast"
-                android:textColor="#545454"
-                android:paddingLeft="13dp"
-                android:paddingTop="5dp"
-                android:layout_row="6"
-                android:layout_column="0" />
-
-            <!-- Value Labels -->
-            <TextView
-                android:text="£ 1,130.43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelBalanceValue"
-                android:textColor="#545454"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="right"
-                android:layout_row="3"
-                android:layout_column="1" />
-
-            <TextView
-                android:text="£ 38.95"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelEarningValue"
-                android:textColor="#545454"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="right"
-                android:layout_row="4"
-                android:layout_column="1" />
-
-            <TextView
-                android:text="£ 79.51"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelSpendingValue"
-                android:textColor="#545454"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="right"
-                android:layout_row="5"
-                android:layout_column="1" />
-
-            <TextView
-                android:text="109 days"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelDaysLastValue"
-                android:textColor="#545454"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="right"
-                android:layout_row="6"
-                android:layout_column="1" />
-
-            <!-- Value Labels -->
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/imgUp"
-                android:id="@+id/imgBalanceState"
-                android:maxWidth="15dp"
-                android:maxHeight="15dp"
-                android:layout_gravity="bottom"
-                android:adjustViewBounds="true"
-                android:layout_row="3"
-                android:layout_column="2"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/imgNetral"
-                android:id="@+id/imgEarningState"
-                android:maxWidth="15dp"
-                android:maxHeight="15dp"
-                android:layout_gravity="bottom"
-                android:adjustViewBounds="true"
-                android:layout_row="4"
-                android:layout_column="2" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/imgDown"
-                android:id="@+id/imgSpendingState"
-                android:maxWidth="15dp"
-                android:maxHeight="15dp"
-                android:layout_gravity="bottom"
-                android:adjustViewBounds="true"
-                android:layout_row="5"
-                android:layout_column="2"/>
-
-            <TextView
-                android:text="£ 14.32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelBalanceChanges"
-                android:textColor="#20c720"
-                android:paddingTop="5dp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="left"
-                android:layout_row="3"
-                android:layout_column="3" />
-
-            <TextView
-                android:text="£ 38.95"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelEarningChanges"
-                android:textColor="#545454"
-                android:paddingTop="5dp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="left"
-                android:layout_row="4"
-                android:layout_column="3" />
-
-            <TextView
-                android:text="£ 79.51"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/labelSpendingChanges"
-                android:textColor="#ff2020"
-                android:paddingTop="5dp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="left"
-                android:layout_row="5"
-                android:layout_column="3" />
-        </GridLayout>
-
-        <ImageButton
+        <TextView
+            android:text="Balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/buttonUpdateData"
-            android:id="@+id/imageButton2"
-            android:maxWidth="50dp"
-            android:maxHeight="50dp"
-            android:scaleType="fitCenter"
+            android:id="@+id/labelBalance"
+            android:textColor="#545454"
+            android:paddingTop="5dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="12dp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:text="£ 1,130.43"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelBalanceValue"
+            android:textColor="#545454"
+            android:gravity="end"
+            android:layout_gravity="end|center_vertical"/>
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_up"
+            android:id="@+id/imgBalanceState"
+            android:maxWidth="15dp"
+            android:maxHeight="15dp"
             android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:layout_below="@+id/gridLayout"
-            android:layout_centerHorizontal="true" />
+            android:layout_gravity="center"/>
 
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
 
-    </RelativeLayout>
+        <TextView
+            android:text="14.32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelBalanceChanges"
+            android:textColor="#20c720"/>
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:id="@+id/layoutEarning">
+
+        <TextView
+            android:text="Earning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelEarning"
+            android:textColor="#545454"
+            android:paddingTop="5dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="15dp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:text="£ 38.95"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelEarningValue"
+            android:textColor="#545454"
+            android:gravity="end"
+            android:layout_gravity="end|center_vertical"/>
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_netral"
+            android:id="@+id/imgEarningState"
+            android:maxWidth="15dp"
+            android:maxHeight="15dp"
+            android:adjustViewBounds="true" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="38.95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelEarningChanges"
+            android:textColor="#545454" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:id="@+id/layoutSpending">
+
+        <TextView
+            android:text="Spending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelSpending"
+            android:textColor="#545454"
+            android:paddingTop="5dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="3dp"/>
+
+        <TextView
+            android:text="£ 79.51"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelSpendingValue"
+            android:textColor="#545454"
+            android:gravity="end"
+            android:layout_gravity="center_vertical"/>
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_down"
+            android:id="@+id/imgSpendingState"
+            android:maxWidth="15dp"
+            android:maxHeight="15dp"
+            android:adjustViewBounds="true" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="79.51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelSpendingChanges"
+            android:textColor="#ff2020" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:id="@+id/layoutDaysLast">
+
+        <TextView
+            android:text="Days Last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelDaysLast"
+            android:textColor="#545454"
+            android:paddingTop="5dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="2dp"
+            />
+
+        <TextView
+            android:text="109 days"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelDaysLastValue"
+            android:textColor="#545454"
+            android:gravity="end"
+            android:layout_gravity="end|center_vertical"/>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/line_separator"
+        android:id="@+id/line_separator"
+        android:alpha="0.5"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/button_update_data"
+        android:id="@+id/button_update_data"
+        android:maxWidth="60dp"
+        android:maxHeight="60dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center_horizontal"
+        android:onClick="gotoUpdateData"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <Button
+        android:id="@+id/button_view_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Data" />
+
+</LinearLayout>
