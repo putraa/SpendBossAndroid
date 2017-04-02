@@ -5,9 +5,26 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * SpendBoss Android - UserData
+ * This file get the variables on user input and verify them
+ * before they are stored in the database.
+ *
+ * ID variable is not here because it is auto increment
+ *
+ * Here user will be able to:
+ * - overview their data in graphical format
+ * - navigate to add/remove
+ * - navigate to setting
+ * - sign out
+ *
+ * @author Adrian Pratama Putra
+ * @version 0.1
+ * @since 2017-01-23
+ */
+
 public class UserData {
 
-    private int _id;
     private Date _date;
     private int _daysafter;
     private float _hand;
@@ -19,11 +36,8 @@ public class UserData {
     private boolean _skip;
     private String _notes;
 
-    public UserData() {
-    }
-
     public UserData(String bank, String hand, String date, String work, String additional, String cutters) {
-
+        /* Verify the data before passing it to another method */
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
         Date startDate;
         try {
@@ -43,59 +57,11 @@ public class UserData {
         this._work = Float.parseFloat(work);
         this._skip = false;
         this._notes = "test";
-
-
     }
 
-    // Setters
-    public void set_id(int _id) {
-        this._id = _id;
-    }
-
-    public void set_date(Date _date) {
-        this._date = _date;
-    }
-
-    public void set_daysafter(int _daysafter) {
-        this._daysafter = _daysafter;
-    }
-
-    public void set_hand(float _hand) {
-        this._hand = _hand;
-    }
-
-    public void set_bank(float _bank) {
-        this._bank = _bank;
-    }
-
-    public void set_spending(float _spending) {
-        this._spending = _spending;
-    }
-
-    public void set_additional(float _additional) {
-        this._additional = _additional;
-    }
-
-    public void set_cutters(float _cutters) {
-        this._cutters = _cutters;
-    }
-
-    public void set_work(float _work) {
-        this._work = _work;
-    }
-
-    public void set_skip(boolean _skip) {
-        this._skip = _skip;
-    }
-
-    public void set_notes(String _notes) {
-        this._notes = _notes;
-    }
-
-    // Getters
-    public int get_id() {
-        return _id;
-    }
+    /** Getters
+     * list of methods that will be used to return specific variable
+     * This will be more improved in the up-coming updates */
 
     public Date get_date() {
         return _date;
